@@ -59,6 +59,7 @@
     window.open(url, "_blank");
   });
 
+  window.__POSTS = bundle.posts || [];
   const script = document.createElement("script");
   script.textContent = bundle.js;
   document.body.appendChild(script);

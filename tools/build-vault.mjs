@@ -9,7 +9,7 @@
 //   node tools/build-vault.mjs --rotate   new key: every previous link stops working
 
 import { randomBytes, createCipheriv } from "node:crypto";
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -46,12 +46,44 @@ function extractPage(file) {
 
 const binary = (path, type) => ({ type, data: readFileSync(join(source, path)).toString("base64") });
 
+// Blog posts: _source/blog/posts/<slug>.html, each starting with a JSON header
+// comment: <!-- {"title", "date": "YYYY-MM-DD", "lang", "type", "topics", "source"} -->
+function readPosts() {
+  const dir = join(source, "blog", "posts");
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir)
+    .filter((file) => file.endsWith(".html"))
+    .map((file) => {
+      const raw = readFileSync(join(dir, file), "utf8");
+      const header = raw.match(/^\s*<!--([\s\S]*?)-->/);
+      if (!header) throw new Error(`${file}: missing JSON header comment`);
+      const meta = JSON.parse(header[1]);
+      const html = raw.slice(header[0].length).trim();
+      const text = html.replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/gi, " ").replace(/\s+/g, " ").trim();
+      return {
+        slug: file.replace(/\.html$/, ""),
+        title: meta.title,
+        date: meta.date,
+        lang: meta.lang || "fr",
+        type: meta.type || "article",
+        topics: meta.topics || [],
+        source: meta.source || "",
+        excerpt: text.length > 200 ? `${text.slice(0, 200).replace(/\s+\S*$/, "")}…` : text,
+        words: text.split(" ").length,
+        html,
+      };
+    })
+    .sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
+}
+
 const bundle = {
   pages: {
     home: extractPage("index.html"),
     links: extractPage("links.html"),
+    blog: extractPage("blog.html"),
     404: extractPage("404.html"),
   },
+  posts: readPosts(),
   css: read("assets/style.css"),
   js: read("assets/script.js"),
   sprite: read("assets/icons.svg"),
@@ -112,6 +144,7 @@ const shell = (page) => `<!DOCTYPE html>
 
 writeFileSync(join(root, "index.html"), shell("home"));
 writeFileSync(join(root, "links.html"), shell("links"));
+writeFileSync(join(root, "blog.html"), shell("blog"));
 writeFileSync(join(root, "404.html"), shell("404"));
 
 writeFileSync(join(root, "shell.js"), `// Decrypts vault.bin with the key from the shared link (#k=...) and renders the page.
@@ -175,11 +208,12 @@ writeFileSync(join(root, "shell.js"), `// Decrypts vault.bin with the key from t
     window.open(url, "_blank");
   });
 
+  window.__POSTS = bundle.posts || [];
   const script = document.createElement("script");
   script.textContent = bundle.js;
   document.body.appendChild(script);
 })();
 `);
 
-console.log(`vault.bin: ${(ciphertext.length / 1024).toFixed(0)} KB encrypted`);
+console.log(`vault.bin: ${(ciphertext.length / 1024).toFixed(0)} KB encrypted, ${bundle.posts.length} blog posts`);
 console.log(`\nShare link:\n${siteUrl}#k=${key.toString("base64url")}\n`);
