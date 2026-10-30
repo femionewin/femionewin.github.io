@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0a0c0b">
+  <title>Portfolio privé · Private portfolio</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+  <style id="lock-style">
+    html, body { margin: 0; min-height: 100%; background: #0a0c0b; color: #ecebe4; }
+    body { display: grid; min-height: 100vh; place-items: center; padding: 1rem; box-sizing: border-box; font-family: "Geist", system-ui, sans-serif; }
+    .lock { max-width: 30rem; text-align: center; }
+    .lock-icon { display: inline-grid; place-items: center; width: 3.5rem; height: 3.5rem; margin-bottom: 1.5rem; border: 1px solid rgba(236,235,228,.2); border-radius: 50%; color: #c9f26b; font-size: 1.4rem; }
+    .lock h1 { margin: 0 0 .75rem; font-size: clamp(1.6rem, 1.2rem + 2vw, 2.4rem); font-weight: 500; letter-spacing: -.04em; }
+    .lock h1 em { color: #c9f26b; font-family: "Instrument Serif", Georgia, serif; font-weight: 400; }
+    .lock p { margin: 0 0 .5rem; color: #9a9f97; line-height: 1.6; }
+    .lock .en { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(236,235,228,.1); }
+    .lock[data-state="loading"] .msg { display: none; }
+    .lock[data-state="locked"] .loading { display: none; }
+    .loading { color: #9a9f97; font-family: "Geist Mono", monospace; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
+  </style>
+</head>
+<body data-shell="links">
+  <main class="lock" data-state="loading">
+    <div class="lock-icon" aria-hidden="true">🔒</div>
+    <p class="loading">Déchiffrement… · Decrypting…</p>
+    <div class="msg">
+      <h1>Portfolio <em>privé.</em></h1>
+      <p>Ce site n’est accessible qu’avec un lien personnel.</p>
+      <p class="en">Private portfolio — this site is only available through a personal link.</p>
+    </div>
+  </main>
+  <noscript><style>.loading{display:none}.msg{display:block!important}</style></noscript>
+  <script src="/shell.js"></script>
+</body>
+</html>
