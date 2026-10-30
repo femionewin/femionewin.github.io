@@ -1,0 +1,9 @@
+{
+  "name": "Femi ONEWIN",
+  "short_name": "Femi",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#355c71",
+  "icons": [{ "src": "/assets/profile.jpg", "sizes": "400x400", "type": "image/jpeg" }]
+}
