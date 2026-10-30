@@ -38,7 +38,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
   <link rel="stylesheet" href="/assets/style.css">
 
   <script type="application/ld+json">
@@ -49,7 +49,7 @@
     "alternateName": "femionewin",
     "url": "https://femionewin.github.io/",
     "image": "https://femionewin.github.io/assets/profile.jpg",
-    "email": "mailto:leo.dansou@gmail.com",
+    "email": "mailto:femionewin@protonmail.com",
     "jobTitle": "Cryptographer & Security Software Engineer",
     "description": "Cryptographer and security software engineer. I set up information system security and develop secure web applications.",
     "address": {
@@ -92,7 +92,7 @@
 
   <header class="site-header">
     <nav class="container nav" aria-label="Main">
-      <a class="brand" href="/">Femi</a>
+      <a class="brand" href="/"><span>~/</span>femionewin</a>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#services">What I do</a></li>
@@ -107,18 +107,22 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
         <div>
-          <h1 id="hero-title">Hey, I'm Femi</h1>
-          <p class="tagline">A <strong>Cryptographer &amp; Security Software Engineer</strong>. I set up information system security and I develop secure web applications.</p>
+          <span class="eyebrow">$ whoami</span>
+          <h1 id="hero-title">Hey, I'm Femi <span class="wave" aria-hidden="true">👋</span></h1>
+          <p class="role">Cryptographer &amp; Security Software Engineer</p>
+          <p class="tagline">I set up information system security and develop secure web applications, with a focus on applied cryptography.</p>
+          <p class="location"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#location"/></svg>Dakar, Senegal</p>
           <ul class="badges" aria-label="Key skills">
             <li>Cryptography</li>
-            <li>Information Security</li>
+            <li>InfoSec</li>
             <li>Java / Spring Security</li>
             <li>Python</li>
             <li>Solidity</li>
+            <li>TensorFlow</li>
           </ul>
           <div class="actions">
-            <a class="btn btn-primary" href="#contact">Contact me</a>
-            <a class="btn btn-outline" href="https://drive.google.com/file/d/1dINyf715SW4GFycQ2mRoMgU46K6ZEpQk/view?usp=sharing" target="_blank" rel="noopener">Resume (PDF)</a>
+            <a class="btn btn-primary" href="#contact"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#envelope"/></svg>Contact me</a>
+            <a class="btn btn-ghost" href="https://drive.google.com/file/d/1dINyf715SW4GFycQ2mRoMgU46K6ZEpQk/view?usp=sharing" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#file-lines"/></svg>Resume (PDF)</a>
           </div>
         </div>
         <div class="photo">
@@ -128,93 +132,98 @@
     </section>
 
     <section id="about" aria-labelledby="about-title">
-      <div class="container">
-        <h2 id="about-title">Who I am</h2>
-        <div class="lead">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow">01. About</span>
+          <h2 id="about-title">Who I am</h2>
+        </div>
+        <div>
           <p>I graduated from <strong>Cheikh Anta Diop University of Dakar</strong> (Senegal) in 2020 with a degree in <strong>Cryptography and Computer Engineering</strong>. I kick-started my professional career as a network administration technician at KeliGroupe, a startup based in Dakar.</p>
           <p>The tech industry is constantly changing, and I love being able to grow with it while continually solidifying the fundamentals. I write code with empathy for future developers, teammates and users, and with accessibility in mind. I love joining communities, helping and mentoring new developers, and supporting organizations that promote diversity in tech. I share my engineering journey on <a href="https://www.instagram.com/femi.onewin/" target="_blank" rel="noopener">Instagram</a> to help people who are just starting out in computer science.</p>
           <p>When I don't have my head immersed in engineering, I enjoy reading, doodling, meeting people and growing my network.</p>
+          <ul class="facts">
+            <li><strong>Cryptography</strong><span>Degree, UCAD Dakar, 2020</span></li>
+            <li><strong>Network admin</strong><span>KeliGroupe, Dakar</span></li>
+            <li><strong>Open source</strong><span>Projects on GitHub</span></li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section id="services" class="alt" aria-labelledby="services-title">
       <div class="container">
+        <span class="eyebrow">02. Services</span>
         <h2 id="services-title">What I do</h2>
+        <p class="section-intro">Security from the network layer up to the code, built on solid cryptographic foundations.</p>
         <div class="grid">
           <article class="card">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#shield"/></svg></div>
             <h3>System Administration &amp; Security</h3>
-            <p>I design and implement information systems and ensure their security.</p>
+            <p>I design and implement information systems and ensure their security, from network administration to hardening and access control.</p>
           </article>
           <article class="card">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#code"/></svg></div>
             <h3>Software Security Engineering</h3>
-            <p>I develop secure applications with frameworks such as Spring Boot Security and the libsodium library, design smart contracts in Solidity (Ethereum blockchain), and make sure cryptographic primitives are used correctly. I also build machine learning and deep learning applications with TensorFlow.</p>
+            <p>I build secure applications with Spring Boot Security and libsodium, design Solidity smart contracts on Ethereum, and make sure cryptographic primitives are used correctly. I also build ML and deep learning apps with TensorFlow.</p>
           </article>
           <article class="card">
-            <h3>Teaching</h3>
-            <p>I share knowledge by teaching courses on the technologies I know.</p>
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#teach"/></svg></div>
+            <h3>Teaching &amp; Mentoring</h3>
+            <p>I share knowledge by teaching courses on the technologies I know and by mentoring developers who are starting out.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="dark" aria-labelledby="projects-title">
+    <section id="projects" aria-labelledby="projects-title">
       <div class="container">
+        <span class="eyebrow">03. Work</span>
         <h2 id="projects-title">Projects</h2>
+        <p class="section-intro">A selection of things I've built and written. More on my <a href="https://github.com/femionewin" target="_blank" rel="noopener">GitHub</a>.</p>
         <div class="grid">
-          <article class="card">
-            <h3>Report Web App (Java EE)</h3>
-            <p>A web application for entering reports, built with Java EE, Spring Boot Security and Thymeleaf.</p>
-            <ul class="tags"><li>Java</li><li>Spring Security</li><li>Thymeleaf</li></ul>
-            <div class="links">
-              <a href="https://github.com/femionewin/RapportWebApp" target="_blank" rel="noopener" aria-label="Report Web App source code on GitHub"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#github"/></svg></a>
-            </div>
+          <article class="card project">
+            <h3>Report Web App</h3>
+            <p>A Java EE web application for entering and managing reports, secured with Spring Boot Security and rendered with Thymeleaf.</p>
+            <ul class="tags"><li>Java EE</li><li>Spring Security</li><li>Thymeleaf</li></ul>
+            <div class="links"><a href="https://github.com/femionewin/RapportWebApp" target="_blank" rel="noopener" aria-label="Report Web App source code on GitHub"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#github"/></svg>Source code</a></div>
           </article>
-          <article class="card">
+          <article class="card project">
             <h3>Cryptopals Challenges</h3>
-            <p>Solutions to the Cryptopals cryptography challenges, written in Python.</p>
+            <p>My solutions to the Cryptopals cryptography challenges: breaking real-world crypto constructions in Python.</p>
             <ul class="tags"><li>Python</li><li>Cryptanalysis</li></ul>
-            <div class="links">
-              <a href="https://github.com/femionewin/cryptopals-challenge" target="_blank" rel="noopener" aria-label="Cryptopals challenges source code on GitHub"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#github"/></svg></a>
-            </div>
+            <div class="links"><a href="https://github.com/femionewin/cryptopals-challenge" target="_blank" rel="noopener" aria-label="Cryptopals challenges source code on GitHub"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#github"/></svg>Source code</a></div>
           </article>
-          <article class="card">
-            <h3>My Blog</h3>
+          <article class="card project">
+            <h3>Security Blog</h3>
             <p>Articles on computer security and cryptography.</p>
             <ul class="tags"><li>Security</li><li>Cryptography</li></ul>
-            <div class="links">
-              <a href="https://medium.com/@femionewin" target="_blank" rel="noopener" aria-label="Blog on Medium"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#medium"/></svg></a>
-              <a href="https://shankslenoir.blogspot.com/" target="_blank" rel="noopener" aria-label="Blog on Blogger"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#blogger"/></svg></a>
-            </div>
+            <div class="links"><a href="https://medium.com/@femionewin" target="_blank" rel="noopener" aria-label="Blog on Medium"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#medium"/></svg>Medium</a><a href="https://shankslenoir.blogspot.com/" target="_blank" rel="noopener" aria-label="Blog on Blogger"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#blogger"/></svg>Blogger</a></div>
           </article>
-          <article class="card">
+          <article class="card project">
             <h3>Network Scan</h3>
-            <p>A shell script that scans the IP addresses connected to a network.</p>
+            <p>A shell script that discovers the IP addresses connected to a local network.</p>
             <ul class="tags"><li>Shell</li><li>Networking</li></ul>
-            <div class="links">
-              <a href="https://github.com/femionewin/ip-scan-with-shell" target="_blank" rel="noopener" aria-label="Network scan script on GitHub"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#github"/></svg></a>
-            </div>
+            <div class="links"><a href="https://github.com/femionewin/ip-scan-with-shell" target="_blank" rel="noopener" aria-label="Network scan script on GitHub"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#github"/></svg>Source code</a></div>
           </article>
-          <article class="card">
+          <article class="card project">
             <h3>Object Detection</h3>
-            <p>Object detection with YOLO and the OpenCV library.</p>
+            <p>Real-time object detection using the YOLO model and the OpenCV library.</p>
             <ul class="tags"><li>Python</li><li>OpenCV</li><li>YOLO</li></ul>
-            <div class="links">
-              <a href="https://github.com/femionewin/object_dectection" target="_blank" rel="noopener" aria-label="Object detection source code on GitHub"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#github"/></svg></a>
-            </div>
+            <div class="links"><a href="https://github.com/femionewin/object_dectection" target="_blank" rel="noopener" aria-label="Object detection source code on GitHub"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#github"/></svg>Source code</a></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-title">
+    <section id="contact" class="contact" aria-labelledby="contact-title">
       <div class="container">
+        <span class="eyebrow">04. Contact</span>
         <h2 id="contact-title">Get in touch</h2>
-        <p class="lead">Up for a coffee chat? Don't hesitate to reach out, I'm happy to talk about security, cryptography or a project you have in mind. You can email me directly at <a href="mailto:leo.dansou@gmail.com">leo.dansou@gmail.com</a>.</p>
+        <p>Up for a coffee chat? I'm happy to talk about security, cryptography or a project you have in mind. Reach me directly at <a href="mailto:femionewin@protonmail.com">femionewin@protonmail.com</a>.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="mailto:leo.dansou@gmail.com">Email me</a>
-          <a class="btn btn-outline" href="mailto:leo.dansou@gmail.com?subject=Coffee%20chat%20request">Schedule a meeting</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/femionewin/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          <a class="btn btn-primary" href="mailto:femionewin@protonmail.com"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#envelope"/></svg>Email me</a>
+          <a class="btn btn-ghost" href="mailto:femionewin@protonmail.com?subject=Coffee%20chat%20request"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#calendar-days"/></svg>Schedule a meeting</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/femionewin/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#linkedin"/></svg>LinkedIn</a>
         </div>
       </div>
     </section>
